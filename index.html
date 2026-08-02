@@ -8,8 +8,8 @@
         :root {
             --primary: #0066ff;
             --primary-hover: #0052cc;
-            --secondary: #4b5563;
-            --secondary-hover: #374151;
+            --secondary: #00c853;
+            --secondary-hover: #009624;
             --bg-color: #f4f7fe;
             --card-bg: #ffffff;
             --text-main: #1f2937;
@@ -66,6 +66,7 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 6px;
+            color: var(--text-main);
         }
 
         .version-tag {
@@ -79,96 +80,113 @@
             margin-bottom: 20px;
         }
 
-        .download-card {
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
+        .description {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 14px 18px;
             border-radius: 14px;
-            padding: 16px;
-            margin-bottom: 16px;
+            text-decoration: none;
+            transition: all 0.2s ease;
             text-align: left;
         }
 
-        .card-title {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 4px;
+        .download-btn.primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+        }
+
+        .download-btn.primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .download-btn.secondary {
+            background-color: #ffffff;
             color: var(--text-main);
+            border: 2px solid #e5e7eb;
         }
 
-        .card-subtitle {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 12px;
+        .download-btn.secondary:hover {
+            background-color: #f9fafb;
+            border-color: #d1d5db;
         }
 
-        .btn-action {
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
+            margin-right: 14px;
+            flex-shrink: 0;
         }
 
-        .btn-primary {
-            background-color: var(--primary);
+        .primary .btn-icon {
+            background: rgba(255, 255, 255, 0.2);
             color: white;
         }
-        .btn-primary:hover { background-color: var(--primary-hover); }
 
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: white;
-        }
-        .btn-secondary:hover { background-color: var(--secondary-hover); }
-
-        .raw-link-box {
-            margin-top: 10px;
-            padding: 8px;
-            background: #ffffff;
-            border: 1px dashed #cbd5e1;
-            border-radius: 8px;
-            word-break: break-all;
-            font-size: 11px;
-            color: #2563eb;
+        .secondary .btn-icon {
+            background: #f3f4f6;
+            color: var(--text-muted);
         }
 
-        .raw-link-box a {
-            color: #2563eb;
-            text-decoration: underline;
-        }
-
-        .copy-btn {
-            background: #e2e8f0;
-            border: none;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            cursor: pointer;
-            margin-top: 6px;
+        .btn-text .title {
+            font-size: 15px;
             font-weight: 600;
+            display: block;
+        }
+
+        .btn-text .subtitle {
+            font-size: 12px;
+            opacity: 0.85;
+            display: block;
+            margin-top: 2px;
         }
 
         .guide-box {
-            background: #fffbe3;
+            background: #f9fafb;
             border-radius: 12px;
-            padding: 14px;
+            padding: 16px;
             text-align: left;
-            border: 1px solid #fef08a;
-            margin-top: 20px;
+            border: 1px dashed #d1d5db;
+        }
+
+        .guide-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .guide-list {
             font-size: 12px;
-            color: #854d0e;
+            color: var(--text-muted);
+            padding-left: 18px;
+            line-height: 1.6;
         }
 
         .footer {
-            margin-top: 20px;
+            margin-top: 24px;
             font-size: 12px;
             color: #9ca3af;
         }
@@ -177,67 +195,77 @@
 <body>
 
     <div class="container">
-        <!-- Logo -->
+        <!-- Logo / Icon -->
         <div class="app-icon">
             <svg viewBox="0 0 24 24">
                 <path d="M17,1H7A2,2 0 0,0 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3A2,2 0 0,0 17,1M17,19H7V5H17V19M12,18A1,1 0 0,1 11,17A1,1 0 0,1 12,16A1,1 0 0,1 13,17A1,1 0 0,1 12,18Z"/>
             </svg>
         </div>
 
+        <!-- Header -->
         <h1>MRF MEDIA</h1>
         <span class="version-tag">Versi 2.0.5+12</span>
 
-        <!-- OPSI 1: ANDROID BARU -->
-        <div class="download-card">
-            <div class="card-title">📱 Android Versi Baru (ARM64)</div>
-            <div class="card-subtitle">Untuk HP keluaran terbaru / rekomendasi utama.</div>
-            
-            <a href="http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm64.apk" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary">
-                🚀 Klik Untuk Download
+        <p class="description">
+            Silakan pilih tombol download di bawah ini sesuai dengan spesifikasi perangkat Android Anda.
+        </p>
+
+        <!-- Download Buttons -->
+        <div class="btn-group">
+            <!-- Link Versi Baru -->
+            <a href="http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm64.apk" class="download-btn primary">
+                <div class="btn-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </div>
+                <div class="btn-text">
+                    <span class="title">Download Versi Baru</span>
+                    <span class="subtitle">Rekomendasi (Android 64-Bit)</span>
+                </div>
             </a>
 
-            <div class="raw-link-box">
-                Link Langsung:<br>
-                <a href="http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm64.apk" target="_blank">http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm64.apk</a>
-            </div>
-            <button class="copy-btn" onclick="copyToClipboard('http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm64.apk')">📋 Salin Link</button>
-        </div>
-
-        <!-- OPSI 2: ANDROID LAMA -->
-        <div class="download-card">
-            <div class="card-title">📲 Android Jadul / Alternatif (ARM32)</div>
-            <div class="card-subtitle">Gunakan ini jika link pertama gagal / HP lama.</div>
-            
-            <a href="http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm32.apk" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary">
-                🚀 Klik Untuk Download
+            <!-- Link Versi Lama -->
+            <a href="http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm32.apk" class="download-btn secondary">
+                <div class="btn-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </div>
+                <div class="btn-text">
+                    <span class="title">Download Versi Jadul / Alternatif</span>
+                    <span class="subtitle">Gunakan jika link utama gagal (32-Bit)</span>
+                </div>
             </a>
-
-            <div class="raw-link-box">
-                Link Langsung:<br>
-                <a href="http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm32.apk" target="_blank">http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm32.apk</a>
-            </div>
-            <button class="copy-btn" onclick="copyToClipboard('http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm32.apk')">📋 Salin Link</button>
         </div>
 
-        <!-- Info Tambahan Jika Masih Terblokir -->
+        <!-- Installation Guide -->
         <div class="guide-box">
-            <strong>⚠️ Masih Tidak Bisa Download?</strong><br>
-            Klik tombol <strong>"Salin Link"</strong> di atas, lalu tempelkan (paste) langsung ke address bar browser Chrome/UC Browser Anda.
+            <div class="guide-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Cara Menginstal APK:
+            </div>
+            <ol class="guide-list">
+                <li>Klik salah satu tombol download di atas.</li>
+                <li>Jika muncul peringatan keamanan, pilih <strong>"Tetap Download"</strong>.</li>
+                <li>Setelah selesai, buka file APK dan aktifkan izin <strong>"Izinkan dari sumber ini"</strong> jika diminta.</li>
+                <li>Klik <strong>Instal</strong> dan tunggu hingga selesai.</li>
+            </ol>
         </div>
 
+        <!-- Footer -->
         <div class="footer">
             &copy; MRF MEDIA. All rights reserved.
         </div>
     </div>
 
-    <script>
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Link berhasil disalin! Silakan tempelkan (paste) langsung di address bar browser Anda.');
-            }).catch(err => {
-                prompt('Salin link berikut secara manual:', text);
-            });
-        }
-    </script>
 </body>
 </html>
