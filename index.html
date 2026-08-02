@@ -3,221 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MRF Media - Aplikasi Multimedia & Transaksi Resmi</title>
-    <!-- Menggunakan Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- FontAwesome untuk Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Download Aplikasi MRF MEDIA</title>
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-hover: #0052cc;
+            --secondary: #00c853;
+            --secondary-hover: #009624;
+            --bg-color: #f4f7fe;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px 24px;
+            text-align: center;
+        }
+
+        .app-icon {
+            width: 88px;
+            height: 88px;
+            background: linear-gradient(135deg, #0066ff, #00d2ff);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 8px 16px rgba(0, 102, 255, 0.25);
+            color: white;
+        }
+
+        .app-icon svg {
+            width: 48px;
+            height: 48px;
+            fill: currentColor;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .version-tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 14px 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .download-btn.primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+        }
+
+        .download-btn.primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .download-btn.secondary {
+            background-color: #ffffff;
+            color: var(--text-main);
+            border: 2px solid #e5e7eb;
+        }
+
+        .download-btn.secondary:hover {
+            background-color: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 14px;
+            flex-shrink: 0;
+        }
+
+        .primary .btn-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .secondary .btn-icon {
+            background: #f3f4f6;
+            color: var(--text-muted);
+        }
+
+        .btn-text .title {
+            font-size: 15px;
+            font-weight: 600;
+            display: block;
+        }
+
+        .btn-text .subtitle {
+            font-size: 12px;
+            opacity: 0.85;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .guide-box {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: left;
+            border: 1px dashed #d1d5db;
+        }
+
+        .guide-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .guide-list {
+            font-size: 12px;
+            color: var(--text-muted);
+            padding-left: 18px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-xs">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <!-- Box biru dihapus, diganti menjadi teks teks biasa yang elegan -->
-            <div class="flex items-center">
-                <span class="text-xl font-extrabold tracking-tight text-slate-900">MRF <span class="text-blue-600 font-bold">Media</span></span>
-            </div>
-            <a href="#panduan-section" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-full transition-all shadow-sm">
-                Mulai Aktivasi
-            </a>
+    <div class="container">
+        <!-- Logo / Icon -->
+        <div class="app-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M17,1H7A2,2 0 0,0 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3A2,2 0 0,0 17,1M17,19H7V5H17V19M12,18A1,1 0 0,1 11,17A1,1 0 0,1 12,16A1,1 0 0,1 13,17A1,1 0 0,1 12,18Z"/>
+            </svg>
         </div>
-    </nav>
 
-    <!-- HERO / INTRO SECTION -->
-    <header class="max-w-6xl mx-auto px-4 pt-16 pb-20 text-center relative overflow-hidden bg-gradient-to-b from-blue-50/50 to-transparent">
-        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 mb-6 border border-blue-200">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span> Versi Terbaru v1.1.03+8 Telah Tersedia
-        </span>
-        
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 max-w-3xl mx-auto leading-tight text-slate-900">
-            Satu Aplikasi Untuk Semua Kebutuhan <span class="text-blue-600">MRF Media</span>
-        </h1>
-        
-        <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Platform multimedia modern yang terintegrasi dengan sistem bot WhatsApp aman untuk kemudahan manajemen akun dan layanan transaksi Anda.
+        <!-- Header -->
+        <h1>MRF MEDIA</h1>
+        <span class="version-tag">Versi 2.0.5+12</span>
+
+        <p class="description">
+            Silakan pilih tombol download di bawah ini sesuai dengan spesifikasi perangkat Android Anda.
         </p>
 
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="#panduan-section" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-md shadow-blue-600/10 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                Baca Panduan & Download <i class="fas fa-arrow-down text-sm"></i>
+        <!-- Download Buttons -->
+        <div class="btn-group">
+            <!-- Link Versi Baru -->
+            <a href="http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm64.apk" class="download-btn primary">
+                <div class="btn-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </div>
+                <div class="btn-text">
+                    <span class="title">Download Versi Baru</span>
+                    <span class="subtitle">Rekomendasi (Android 64-Bit)</span>
+                </div>
+            </a>
+
+            <!-- Link Versi Lama -->
+            <a href="http://46.250.236.206:1212/www/Aplikasi/Appsol/mrf_media_v2.0.5%2B12_arm32.apk" class="download-btn secondary">
+                <div class="btn-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </div>
+                <div class="btn-text">
+                    <span class="title">Download Versi Jadul / Alternatif</span>
+                    <span class="subtitle">Gunakan jika link utama gagal (32-Bit)</span>
+                </div>
             </a>
         </div>
-    </header>
 
-    <!-- FITUR UTAMA (INTRO APP) -->
-    <section class="bg-white py-16 border-y border-slate-200">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Mengapa Menggunakan MRF Media?</h2>
-                <p class="text-slate-500 text-sm mt-2">Kelebihan utama ekosistem aplikasi kami</p>
+        <!-- Installation Guide -->
+        <div class="guide-box">
+            <div class="guide-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Cara Menginstal APK:
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Fitur 1 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-xs">
-                    <div class="bg-blue-100 text-blue-600 p-3 rounded-xl w-fit mb-4">
-                        <i class="fas fa-robot text-xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-2 text-slate-900">Integrasi Bot WhatsApp</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Kelola pendaftaran, ubah PIN, dan validasi keamanan akun secara praktis lewat chat bot otomatis.</p>
-                </div>
-                <!-- Fitur 2 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-xs">
-                    <div class="bg-indigo-100 text-indigo-600 p-3 rounded-xl w-fit mb-4">
-                        <i class="fas fa-shield-alt text-xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-2 text-slate-900">Keamanan Transaksi</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Perlindungan ganda menggunakan enkripsi PIN transaksi 6-digit untuk menjaga keamanan data Anda.</p>
-                </div>
-                <!-- Fitur 3 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-xs">
-                    <div class="bg-teal-100 text-teal-600 p-3 rounded-xl w-fit mb-4">
-                        <i class="fas fa-mobile-alt text-xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-2 text-slate-900">Kompatibilitas Luas</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Menyediakan file instalasi khusus untuk HP Android spesifikasi terbaru (64-bit) maupun tipe lama (32-bit).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LANGKAH LANGKAH AKSES (PANDUAN UTAMA) -->
-    <section id="panduan-section" class="max-w-4xl mx-auto px-4 py-20">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900">Langkah-Langkah Mengakses Aplikasi</h2>
-            <p class="text-slate-500 text-sm mt-2">Harap ikuti instruksi aktivasi bot di bawah ini dengan benar sebelum membuka aplikasi</p>
+            <ol class="guide-list">
+                <li>Klik salah satu tombol download di atas.</li>
+                <li>Jika muncul peringatan keamanan, pilih <strong>"Tetap Download"</strong>.</li>
+                <li>Setelah selesai, buka file APK dan aktifkan izin <strong>"Izinkan dari sumber ini"</strong> jika diminta.</li>
+                <li>Klik <strong>Instal</strong> dan tunggu hingga selesai.</li>
+            </ol>
         </div>
 
-        <div class="space-y-8">
-            
-            <!-- LANGKAH 1 -->
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs relative">
-                <div class="absolute top-0 left-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-br-xl">
-                    LANGKAH 1
-                </div>
-                <div class="flex items-start gap-4 mt-2">
-                    <div class="bg-blue-50 text-blue-600 p-3 rounded-xl hidden sm:block mt-1">
-                        <i class="fas fa-sign-in-alt text-xl"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Pastikan Akun Sudah Ada</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Pastikan Anda sudah memiliki akun MRF Media. Jika sudah terdaftar, nantinya Anda bisa masuk (login) ke dalam aplikasi menggunakan <strong class="text-slate-900">Nomor WhatsApp</strong> dan <strong class="text-slate-900">PIN Transaksi</strong> Anda.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LANGKAH 2 -->
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs relative">
-                <div class="absolute top-0 left-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-br-xl">
-                    LANGKAH 2
-                </div>
-                <div class="flex items-start gap-4 mt-2">
-                    <div class="bg-indigo-600 text-white p-3 rounded-xl hidden sm:block mt-1">
-                        <i class="fas fa-lock text-xl"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Ganti PIN Menjadi 6 Angka</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Ubah PIN standar Anda menjadi <span class="text-indigo-600 font-semibold">6 digit angka</span> demi keamanan. Kirimkan pesan format berikut ini ke nomor WhatsApp Bot MRF Media:
-                        </p>
-                        
-                        <!-- Box Format Kode -->
-                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-sm">
-                            <div class="text-slate-400 text-xs mb-1 uppercase tracking-wider font-sans">Format Ubah PIN:</div>
-                            <div class="text-indigo-600 font-bold tracking-wide">GP.pinlama.pinbaru</div>
-                            <div class="border-t border-slate-200 my-2 pt-2 text-slate-400 text-xs font-sans">Contoh Pesan:</div>
-                            <div class="text-slate-700">GP.1234.123456</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LANGKAH 3 -->
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs relative">
-                <div class="absolute top-0 left-0 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-br-xl">
-                    LANGKAH 3
-                </div>
-                <div class="flex items-start gap-4 mt-2">
-                    <div class="bg-teal-600 text-white p-3 rounded-xl hidden sm:block mt-1">
-                        <i class="fas fa-user-plus text-xl"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Pendaftaran Nomor WhatsApp ke Bot</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Nomor WhatsApp Anda wajib terdaftar di sistem bot. Jika belum terdaftar, lakukan proses pendaftaran baru dengan mengirimkan format berikut ke WhatsApp Bot:
-                        </p>
-                        
-                        <!-- Box Format Kode -->
-                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-sm">
-                            <div class="text-slate-400 text-xs mb-1 uppercase tracking-wider font-sans">Format Pendaftaran:</div>
-                            <div class="text-teal-600 font-bold tracking-wide">tno.nomorwa.pin</div>
-                            <div class="border-t border-slate-200 my-2 pt-2 text-slate-400 text-xs font-sans">Contoh Pesan:</div>
-                            <div class="text-slate-700">tno.0838943455657.123456</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MENU DOWNLOAD (LANGKAH TERAKHIR) -->
-            <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-blue-500 text-center relative shadow-md">
-                <div class="absolute top-0 left-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-br-xl">
-                    LANGKAH 4
-                </div>
-                <h3 class="text-2xl font-bold mb-2 text-slate-900 mt-2">Download & Instal Aplikasi</h3>
-                <p class="text-slate-500 text-sm mb-8 max-w-md mx-auto">
-                    Setelah merampungkan urusan akun dan bot di atas, silakan unduh aplikasi resmi MRF Media melalui tombol aman di bawah ini:
-                </p>
-
-                <!-- Download Buttons -->
-                <div class="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-6">
-                    <!-- APK Utama -->
-                    <a href="https://mrfmedia.appsolution.my.id/Aplikasi/mrf_media_v1.1.03+8_arm64.apk" class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-xl shadow-md shadow-blue-600/10 transition-all transform hover:-translate-y-0.5 flex flex-col items-center justify-center gap-1 group">
-                        <div class="flex items-center gap-2 font-bold text-base">
-                            <i class="fab fa-android text-xl group-hover:scale-110 transition-transform"></i>
-                            Download APK Terbaru
-                        </div>
-                        <span class="text-xs text-blue-100 font-mono opacity-90">Versi Android Terbaru (ARM64)</span>
-                    </a>
-
-                    <!-- APK Cadangan -->
-                    <a href="https://mrfmedia.appsolution.my.id/Aplikasi/mrf_media_v1.1.03+8_arm32.apk" class="bg-slate-100 hover:bg-slate-200 text-slate-700 p-4 rounded-xl border border-slate-300 transition-all transform hover:-translate-y-0.5 flex flex-col items-center justify-center gap-1">
-                        <div class="flex items-center gap-2 font-semibold text-sm">
-                            <i class="fas fa-history text-slate-500"></i>
-                            File Khusus Versi Lama
-                        </div>
-                        <span class="text-xs text-slate-500 font-mono">Untuk Android Tipe Lama (ARM32)</span>
-                    </a>
-                </div>
-                
-                <!-- KOTAK PERINGATAN KEAMANAN (NOTIF PLAY STORE) -->
-                <div class="max-w-xl mx-auto bg-amber-50 border border-amber-300 rounded-xl p-4 text-left flex gap-3 items-start shadow-xs">
-                    <div class="text-amber-600 mt-0.5">
-                        <i class="fas fa-exclamation-triangle text-lg"></i>
-                    </div>
-                    <div class="text-xs leading-relaxed text-slate-700">
-                        <strong class="text-amber-800 block mb-1">PENTING SAAT INSTALASI:</strong>
-                        Jika muncul peringatan <span class="text-slate-900 font-bold">"Aplikasi Berbahaya"</span> atau <span class="text-slate-900 font-bold font-mono text-[11px]">Blocked by Play Protect</span> saat menginstal file APK, itu adalah hal yang wajar. Notifikasi tersebut otomatis muncul dari sistem Android hanya karena aplikasi ini didownload secara mandiri dan <strong>belum terdaftar di Google Play Store</strong>. 
-                        <span class="block mt-1.5 text-emerald-700 font-semibold"><i class="fas fa-shield-halved mr-1"></i> Aplikasi MRF Media 100% sangat aman digunakan. Silakan klik "Tetap Instal" (Install Anyway) untuk melanjutkan.</span>
-                    </div>
-                </div>
-                
-                <p class="text-xs text-slate-400 mt-5">
-                    <i class="fas fa-info-circle mr-1 text-slate-400"></i> Catatan Tambahan: Gunakan link <em>File Khusus Versi Lama (ARM32)</em> apabila versi utama gagal terpasang atau tidak kompatibel dengan HP Anda.
-                </p>
-            </div>
-
+        <!-- Footer -->
+        <div class="footer">
+            &copy; MRF MEDIA. All rights reserved.
         </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-200 bg-white text-center py-8 text-xs text-slate-500 shadow-inner">
-        <p>&copy; 2026 MRF Media. Hak Cipta Dilindungi Undang-Undang.</p>
-    </footer>
+    </div>
 
 </body>
 </html>
